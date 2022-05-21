@@ -1,0 +1,16 @@
+# Service - LoadBalancer
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: Jenkins_service
+  labels:
+    app: Jenkins_Pod
+spec:
+  selector:
+    app: Jenkins_Pod
+  type: LoadBalancer
+  ports:
+  - nodePort: 32750
+    port: 8080
+    targetPort: 8080
